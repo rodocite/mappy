@@ -17,22 +17,22 @@ Once the project moves into development, the press release can be used as a touc
  -->
  
 ## Heading ##
-  > Name the product in a way the reader (i.e. your target customers) will understand.
+  > Mappy
 
 ## Sub-Heading ##
-  > Describe who the market for the product is and what benefit they get. One sentence only underneath the title.
+  > See a cool photo of a place on Instagram? Find out where it is and visit.
 
 ## Summary ##
-  > Give a summary of the product and the benefit. Assume the reader will not read anything else so make this paragraph good.
+  > 
 
 ## Problem ##
-  > Describe the problem your product solves.
+  > Looking at locations for Geotagged photos is too mundane.
 
 ## Solution ##
-  > Describe how your product elegantly solves the problem.
+  > It just maps the locations of places in your favorite photos so you can easily see where these places are.
 
 ## Quote from You ##
-  > A quote from a spokesperson in your company.
+  > 'Go explore.'
 
 ## How to Get Started ##
   > Describe how easy it is to get started.
