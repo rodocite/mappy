@@ -16,5 +16,3 @@ window.marker = function(latitude, longitude){
     map: window.map
   });
 };
-
-console.log(window.data)
