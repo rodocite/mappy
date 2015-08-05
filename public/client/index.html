@@ -1,18 +1,23 @@
 <doctype! html>
 <html>
 <head>
-  <style type="text/css">html, body, #map-canvas { height: 60em; margin: 0; padding: 0; }</style>
+  <title>Mappy</title>
+  <style type="text/css">html, body, #map-canvas { height: 35em; margin: 0; padding: 0; }</style>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDb6q2dTbOVfNYcDvot3kHgfe6WTn4dy7U"></script>
   <script src="mapInitialize.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
-<script src="markerController.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
+  <script src="markerController.js"></script>
+  <script src="infobubble.js"></script>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div id="map-canvas"></div>
-    <div ng-app="mapper" ng-controller="markerCtrl">
-        <input type="text" ng-model="query"/>
-        <button ng-click="get()">Map Tags</button>
-        </div>
-    </div>
+    <section class="button">
+      <div><h1 class="logo">Mappy</h1></div>
+      <div ng-app="mapper" ng-controller="markerCtrl">
+          <input type="text" ng-model="query"/>
+          <button ng-click="get()">Map Instagram Hashtags</button>
+      </div>
+    </section>
 </body>
 </html>

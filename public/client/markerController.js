@@ -8,28 +8,31 @@ angular.module('mapper', [])
 .controller('markerCtrl', function($scope, $http) {
   $scope.get = function() {
     var access = 'https://api.instagram.com/v1/tags/' + $scope.query + '?access_token=26237012.24a20a9.5a528843d38c4aaa99d434aa35af8356&count=100';
-    // var access = 'https://api.instagram.com/v1/users/rodoriot/?access_token=26237012.24a20a9.5a528843d38c4aaa99d434aa35af8356';
 
     $http.post('/api', {data: $scope.query})
     .then(function(response) {
+      console.log(response.data.data)
       var list = response.data.data;
       var lat; 
       var long;
-      var coordsList = [];
+      var image;
+      $scope.coordsList = [];
       var count = 0;
 
       for(var i = 0; i < list.length; i++) {
         if(list[i].location) {
-          console.log(list[i])
           lat = list[i].location.latitude;
           long = list[i].location.longitude;
-          coordsList.push({lat: lat, long: long});
+          image = list[i].images.low_resolution.url;
+          title = list[i].user.username;
+          link = list[i].link;
+          $scope.coordsList.push({lat: lat, long: long, image: image, title: title, link: link});
         }
       }
 
       setInterval(function(){
-        if(count < coordsList.length) {
-          marker(coordsList[count].lat, coordsList[count].long);
+        if(count < $scope.coordsList.length) {
+          marker($scope.coordsList[count].lat, $scope.coordsList[count].long, $scope.coordsList[count].image, $scope.coordsList[count].title, $scope.coordsList[count].link);
           count++; 
         } else {
           clearInterval();
