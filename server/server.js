@@ -14,9 +14,9 @@ app.use(express.static('../public/client'));
 app.post('/api', function (req, res) {
   req.on('data', function (data) {
     var query = JSON.parse(data);
-    var access = 'https://api.instagram.com/v1/tags/' + query.data + '/media/recent?access_token=26237012.24a20a9.5a528843d38c4aaa99d434aa35af8356';
+    var access = 'https://api.instagram.com/v1/tags/' + query.data + '/media/recent?access_token=[ACCESS TOKEN]';
     request(access, function (error, response, body) {
-      res.send(body)
+      res.send(body);
     });
   });
 });
