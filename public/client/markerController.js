@@ -7,13 +7,11 @@ angular.module('mapper', [])
 
 .controller('markerCtrl', function($scope, $http) {
   $scope.get = function() {
-    var access = 'https://api.instagram.com/v1/tags/' + $scope.query + '?access_token=26237012.24a20a9.5a528843d38c4aaa99d434aa35af8356&count=100';
-
     $http.post('/api', {data: $scope.query})
     .then(function(response) {
       console.log(response.data.data)
       var list = response.data.data;
-      var lat; 
+      var lat;
       var long;
       var image;
       $scope.coordsList = [];
@@ -33,7 +31,7 @@ angular.module('mapper', [])
       setInterval(function(){
         if(count < $scope.coordsList.length) {
           marker($scope.coordsList[count].lat, $scope.coordsList[count].long, $scope.coordsList[count].image, $scope.coordsList[count].title, $scope.coordsList[count].link);
-          count++; 
+          count++;
         } else {
           clearInterval();
         }
